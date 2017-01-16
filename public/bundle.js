@@ -28901,6 +28901,10 @@
 
 	var _reactRedux = __webpack_require__(254);
 
+	var _axios = __webpack_require__(276);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28927,10 +28931,18 @@
 	          username = _refs.username,
 	          password = _refs.password;
 
-	      if (username.value === 'khoapham' && password.value === '123') {
-	        dispatch({ type: 'LOG_IN', username: username.value });
-	      }
-	      console.log('Submit');
+	      // if(username.value === 'khoapham' && password.value === '123'){
+	      //   dispatch({type: 'LOG_IN', username: username.value});
+	      // }
+	      // console.log('Submit');
+
+	      _axios2.default.post('/signIn', { username: username.value, password: password.value }).then(function (res) {
+	        if (res.data === 'DANG_NHAP_THANH_CONG') {
+	          dispatch({ type: 'LOG_IN', username: username.value });
+	        } else {}
+	      }).catch(function (err) {
+	        return console.log(err);
+	      });
 	    }
 	  }, {
 	    key: 'render',
