@@ -1,10 +1,15 @@
 import React from 'react';
+import {Link, IndexLink} from 'react-router';
 
 class Nav extends React.Component{
   render(){
     return (
       <div>
-        <h1>This is Nav</h1>
+        <ul>
+          <li><IndexLink to="/" activeClassName="active">Homepage</IndexLink></li>
+          <li><Link to="/account" activeClassName="active">Account</Link></li>
+          <li><Link to="/transaction" activeClassName="active">Transaction</Link></li>
+        </ul>
       </div>
     )
   }
