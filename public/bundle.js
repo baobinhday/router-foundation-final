@@ -28988,6 +28988,10 @@
 
 	var _reactRedux = __webpack_require__(254);
 
+	var _axios = __webpack_require__(276);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29011,7 +29015,11 @@
 	      e.preventDefault();
 	      var dispatch = this.props.dispatch;
 
-	      dispatch({ type: 'LOG_OUT' });
+	      _axios2.default.get('/logout').then(function (res) {
+	        dispatch({ type: 'LOG_OUT' });
+	      }).catch(function (err) {
+	        return console.log(err);
+	      });
 	    }
 	  }, {
 	    key: 'render',

@@ -34,4 +34,9 @@ app.get('/getInfo', (req, res) => {
     return res.send(req.session.username);
   }
   res.send('CHUA_DANG_NHAP');
-})
+});
+
+app.get('/logout', (req, res) => {
+  req.session.username = undefined;
+  res.send('DA_DANG_XUAT');
+});
