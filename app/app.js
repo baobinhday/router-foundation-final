@@ -44,7 +44,7 @@ var requireLogin = (nextState, replace, next) => {
 }
 
 require('style!css!foundation-sites/dist/css/foundation.min.css');
-require('style!css!./css/style.css');
+require('style!css!sass!./css/style.scss');
 $(document).ready(() => $(document).foundation());
 
 ReactDOM.render(
