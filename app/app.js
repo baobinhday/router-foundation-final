@@ -38,12 +38,13 @@ var Main = require('Main');
 
 var requireLogin = (nextState, replace, next) => {
   if(store.getState().username === null){
-    replace('/');
+    replace('/'); 
   }
   next();
 }
 
 require('style!css!foundation-sites/dist/css/foundation.min.css');
+$(document).ready(() => $(document).foundation());
 
 ReactDOM.render(
   <Provider store={store}>
