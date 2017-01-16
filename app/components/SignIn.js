@@ -31,7 +31,7 @@ class SignIn extends React.Component{
           <br/><br/>
           <input type="password" placeholder="Password" ref="password"/>
           <br/><br/>
-          <button type="submit">Sign In</button>
+          <button type="submit" className="button">Sign In</button>
         </form>
       </div>
     )
