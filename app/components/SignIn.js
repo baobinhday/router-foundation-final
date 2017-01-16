@@ -1,8 +1,14 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 class SignIn extends React.Component{
   handleSubmit(e){
     e.preventDefault();
+    var {dispatch} = this.props;
+    var {username, password} = this.refs;
+    if(username.value === 'khoapham' && password.value === '123'){
+      dispatch({type: 'LOG_IN', username: username.value});
+    }
     console.log('Submit');
   }
   render(){
@@ -20,4 +26,4 @@ class SignIn extends React.Component{
   }
 }
 
-module.exports = SignIn;
+module.exports = connect()(SignIn);
