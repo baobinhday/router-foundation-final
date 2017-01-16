@@ -39,6 +39,7 @@ var Main = require('Main');
 var requireLogin = (nextState, replace, next) => {
   if(store.getState().username === null){
     replace('/');
+    store.dispatch({type: 'SHOW_NOTIFICATION', txt: 'You must sign in firts!'})
   }
   next();
 }
