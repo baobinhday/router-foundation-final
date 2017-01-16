@@ -18,7 +18,7 @@ class SignIn extends React.Component{
       if(res.data === 'DANG_NHAP_THANH_CONG'){
         dispatch({type: 'LOG_IN', username: username.value});
       }else{
-
+        dispatch({type: 'SHOW_NOTIFICATION', txt: 'Kiem tra lai username va password'});
       }
     })
     .catch(err => console.log(err))
