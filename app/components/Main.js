@@ -9,7 +9,7 @@ class Main extends React.Component{
     var {notification} = this.props;
     var xhtml = notification != null? <Notification txt={notification}/>: null;
     return (
-      <div>
+      <div className="row">
         <Nav/>
         {xhtml}
         {this.props.children}

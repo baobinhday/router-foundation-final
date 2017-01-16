@@ -8,7 +8,7 @@ class Account extends React.Component{
     var {username} = this.props;
     var xhtml = username === null? <SignIn/>:<AccountInfo/>
     return (
-      <div>
+      <div className="small-10 medium-6 large-4 columns small-centered">
         {xhtml}
       </div>
     )
